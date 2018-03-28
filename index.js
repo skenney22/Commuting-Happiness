@@ -8,7 +8,7 @@ function getApiData (searchTerm,callback) {
     const settings = {
         url: CENSUS_SEARCH_URL,
         data: {
-            get: 'NAME,K200802_002E',
+            get: 'NAME,K200802_002E,K200802_003E,K200802_004E,K200802_005E',
             for: `place:${c}`,
             in: `state:${s}`,
             key: CENSUS_KEY,
@@ -37,12 +37,12 @@ function renderSearchResults (item) {
     return `<div>
                 <p>Total people with commuting time less than 10 minutes: ${item[1]}</p>
             </div>`;
+
 }
 
 function displaySearchResults (data) {
     console.log('results:', data);
-    let dataPoints = [];
-    let results = dataPoints.map((item,index) =>
+    let results = $.map((item,index) =>
         renderSearchResults(item));
     $(`.js-container`).html(renderSearchResults(results));
 
