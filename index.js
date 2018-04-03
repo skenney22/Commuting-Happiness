@@ -78,7 +78,7 @@ function displaySearchResults (dataTotal) {
 function determineHappiness () {
     console.log(happyData[0])
     const happyindex= happyData.findIndex(findIndexLocation)
-        if (happyindex!=-1) {
+        if (happyindex!==-1) {
             return `<div class="happyParagraph">
                         <p>${happyData[happyindex][0]} is ranked number ${happyData[happyindex][1]} happiest cities in the US!</p>
                     </div>`;
