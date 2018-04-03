@@ -53,6 +53,7 @@ function returnSearchResults (dataTotal) {
     const index = dataTotal.findIndex(findIndexLocation)
         if (index!==-1) {
             return `<div class="results">
+                        <h1>${dataTotal[index][0]}</h1>
                         <p>Less than 10 minutes: ${dataTotal[index][1]}</p>
                         <p>Between 10 and 29 minutes: ${dataTotal[index][2]}</p>
                         <p>Between 30 and 59 minutes: ${dataTotal[index][3]}</p>
