@@ -8,9 +8,9 @@ function renderHomeScreen () {
                 <p>Enter any city and state in the US to receive commuting and happiness data for that city</p>
             </div>
             <form class="js-searchForm searchForm">
-                <input type="text" class="js-cityInput cityInput" placeholder="City"></input>
+                <label><input type="text" class="js-cityInput cityInput" placeholder="City"></input>
                 <input type="text" class="js-stateInput stateInput" placeholder="State"></input>
-                <button type="input" class="searchButton">Search</button>
+                <button type="input" class="searchButton">Search</button></label>
             </form>` 
 }
 
@@ -61,10 +61,12 @@ function returnSearchResults (dataTotal) {
                     </div>`
         }
         else {
+            $(`.happyParagraph`).remove();
             return `<div class= "error">
                         <p>Please enter a valid city and state</p>
                         <button class="js-again again">Try Again</button>
                     </div>`
+
         }
 }     
 
