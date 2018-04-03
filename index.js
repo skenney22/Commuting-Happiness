@@ -78,12 +78,12 @@ function displaySearchResults (dataTotal) {
 
 }
 
-function determineHappiness () {
-    console.log(happyData[0])
-    const happyindex= happyData.findIndex(findIndexLocation)
+function determineHappiness (happy) {
+    console.log(happy[0])
+    const happyindex= happy.findIndex(findIndexLocation)
         if (happyindex!==-1) {
             return `<div class="happyParagraph">
-                        <p>${happyData[happyindex][0]} is ranked number ${happyData[happyindex][1]} happiest cities in the US!</p>
+                        <p>${happy[happyindex][0]} is ranked number ${happy[happyindex][1]} happiest cities in the US!</p>
                     </div>`;
         }
         else {
@@ -93,8 +93,9 @@ function determineHappiness () {
         }
 }
 
-function displayHappiness (happyData) {
-    $(`.js-happiness`).html(determineHappiness(happyData));
+function displayHappiness (happy) {
+
+    $(`.js-happiness`).html(determineHappiness(happy));
 }
 
 
@@ -103,7 +104,7 @@ function watchSubmitResults () {
     $(`.js-container`).on('submit', '.js-searchForm', function (event) {
         event.preventDefault();
         getApiDataTotal(displaySearchResults);
-        displayHappiness();
+        displayHappiness(happyData);
         
     });
 }
