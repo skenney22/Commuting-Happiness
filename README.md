@@ -3,7 +3,7 @@
 <p>This app should show you the commuting and happiness data of any city in the US.</p>
 <h1>Screenshots</h1>
 <p> <img src="/welcomescreen.jpg">
-    <img src= "/resultsscreen.jpg">
+    <img src= "/resultscreen.jpg">
 </p>
 
 <h2>Summary</h2>
