@@ -3,7 +3,11 @@ const CENSUS_KEY = '67eacecacd439e8e5bdea9feea8ae0281d28c761';
 
 function renderHomeScreen () {
     console.log('open home screen')
-    return `<form class="js-searchForm searchForm">
+    return `<div class="heading">
+                <h2>The tool for determining happiness in another city!</h2>
+                <p>Enter any city and state in the US to receive commuting and happiness data for that city</p>
+            </div>
+            <form class="js-searchForm searchForm">
                 <input type="text" class="js-cityInput cityInput" placeholder="City"></input>
                 <input type="text" class="js-stateInput stateInput" placeholder="State"></input>
                 <button type="input" class="searchButton">Search</button>
@@ -74,10 +78,16 @@ function displaySearchResults (dataTotal) {
 function determineHappiness () {
     console.log(happyData[0])
     const happyindex= happyData.findIndex(findIndexLocation)
-
-        return `<div class="happyParagraph">
-                    <p>${happyData[happyindex][0]} is ranked number ${happyData[happyindex][1]} happiest cities in the US!</p>
-                </div>`;
+        if (happyindex!=-1) {
+            return `<div class="happyParagraph">
+                        <p>${happyData[happyindex][0]} is ranked number ${happyData[happyindex][1]} happiest cities in the US!</p>
+                    </div>`;
+        }
+        else {
+            return `<div class="happyParagraph">
+                        <p>Sorry, your city hasn't been rated one of the happiest cities in the US yet, but make sure to spread the happiness anyway!</p>
+                    </div>`
+        }
 }
 
 function displayHappiness (happyData) {
